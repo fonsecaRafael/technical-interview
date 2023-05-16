@@ -11,6 +11,19 @@ def max_min(lst):
 
     max_value = min_value = lst[-1]
 
+    """
+    t(n) = 1 + t(n-1)
+    t(n) = 1 + 1 + t(n-2)
+    t(n) = 1 + 1 + 1 + n*1 + t(-1)
+    t(n) = 3 + n + 1
+    t(n) = O(n)
+
+    m(n) = 1 + m(n-1)
+    m(n) = 1 + 1 + m(n-2)
+    m(n) = 1 + 1 + n*1 + m(-1)
+    m(n) = O(n)
+    """
+
     def max_min_rec(current_index):
         nonlocal max_value, min_value
         if current_index < 0:
